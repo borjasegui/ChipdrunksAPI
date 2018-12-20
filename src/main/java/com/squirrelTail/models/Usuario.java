@@ -17,28 +17,28 @@ public class Usuario {
 	@Column(name="nombre")
 	private String nombre;
 	@Column(name="cp")
-	private int codigoPostal;
+	private int codigopostal;
 	@Column(name="email")
 	private String email;
 	
 	@Column(name="password")
 	private String password;
 	@Column(name="n_bares")
-	private int nºbares;
+	private int nbares;
 	
 	
 	public Usuario() {
 
 	}
 
-	public Usuario(int nid, String nombre, String email, int codigoPostal, String password, int nºbares) {
+	public Usuario(int nid, String nombre, String email, int codigopostal, String password, int nbares) {
 		super();
 		this.nid = nid;
 		this.nombre = nombre;
 		this.email = email;
-		this.codigoPostal = codigoPostal;
+		this.codigopostal = codigopostal;
 		this.password = password;
-		this.nºbares = nºbares;
+		this.nbares = nbares;
 	}
 
 	public int getNid() {
@@ -57,20 +57,20 @@ public class Usuario {
 		this.nombre = nombre;
 	}
 
+	public int getCodigopostal() {
+		return codigopostal;
+	}
+
+	public void setCodigopostal(int codigopostal) {
+		this.codigopostal = codigopostal;
+	}
+
 	public String getEmail() {
 		return email;
 	}
 
 	public void setEmail(String email) {
 		this.email = email;
-	}
-
-	public int getCodigoPostal() {
-		return codigoPostal;
-	}
-
-	public void setCodigoPostal(int codigoPostal) {
-		this.codigoPostal = codigoPostal;
 	}
 
 	public String getPassword() {
@@ -81,11 +81,13 @@ public class Usuario {
 		this.password = password;
 	}
 
-	public int getNºbares() {
-		return nºbares;
+	public int getNbares() {
+		return nbares;
 	}
 
-	public void setNºbares(int nºbares) {
-		this.nºbares = nºbares;
+	public void setNbares(int nbares) {
+		this.nbares = nbares;
 	}
+
+	
 }

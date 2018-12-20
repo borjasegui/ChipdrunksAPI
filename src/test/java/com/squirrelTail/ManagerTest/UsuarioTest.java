@@ -42,7 +42,7 @@ public class UsuarioTest {
 			usuarios = c.list();
 			for (Usuario usuario : usuarios) {
 				System.out.println("hola");
-				System.out.println(usuario.getNombre() + " " + usuario.getNºbares());
+				System.out.println(usuario.getNombre() + " " + usuario.getNbares());
 			}
 			session.close();
 		} catch (Exception e) {
