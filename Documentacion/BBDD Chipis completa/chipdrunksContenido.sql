@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 20-12-2018 a las 08:55:21
+-- Tiempo de generación: 20-12-2018 a las 11:27:39
 -- Versión del servidor: 5.7.11
 -- Versión de PHP: 5.6.18
 
@@ -23,11 +23,6 @@ CREATE DATABASE IF NOT EXISTS `chipdrunks` DEFAULT CHARACTER SET latin1 COLLATE 
 USE `chipdrunks`;
 
 --
--- Truncar tablas antes de insertar `bar`
---
-
-TRUNCATE TABLE `bar`;
---
 -- Volcado de datos para la tabla `bar`
 --
 
@@ -39,20 +34,16 @@ INSERT INTO `bar` (`bid`, `nombre`, `direccion`, `telefono`, `latitud`, `longitu
 (6, 'Bar Pop Copas y tapas', 'Calle de la Tapa gratis 23', 916754787, 40.461812, -3.6767821, 'Ven 5 dias en tres semanas y te regalamos la tapa del mes con tu birra');
 
 --
--- Truncar tablas antes de insertar `bar_cerveza`
+-- Volcado de datos para la tabla `cerveza`
 --
 
-TRUNCATE TABLE `bar_cerveza`;
---
--- Truncar tablas antes de insertar `cerveza`
---
+INSERT INTO `cerveza` (`zid`, `nombre`, `porcentaje_alcohol`, `descripcion`) VALUES
+(1, 'alhambra', 6.3, 'rubia del sur de españa'),
+(2, 'cruz campo', 5.4, 'cerveza barata y mala'),
+(3, 'mahou', 4.6, 'madrid 5 estrellas'),
+(4, 'san miguel', 3.7, 'gran cerveza para los filipinos'),
+(5, 'leffe', 7.5, 'cerveza belga');
 
-TRUNCATE TABLE `cerveza`;
---
--- Truncar tablas antes de insertar `clan`
---
-
-TRUNCATE TABLE `clan`;
 --
 -- Volcado de datos para la tabla `clan`
 --
@@ -66,11 +57,6 @@ INSERT INTO `clan` (`cid`, `nombre`, `n_bares`) VALUES
 (6, 'Happy Tree Friends', 1);
 
 --
--- Truncar tablas antes de insertar `usuario`
---
-
-TRUNCATE TABLE `usuario`;
---
 -- Volcado de datos para la tabla `usuario`
 --
 
@@ -82,11 +68,6 @@ INSERT INTO `usuario` (`nid`, `nombre`, `cp`, `email`, `password`, `n_bares`) VA
 (7, 'Jorgio', 28927, 'jorgio@gmail.es', 'jorgio', 6),
 (8, 'Espinete', 28929, 'espinete@gmail.es', 'espinete', 1);
 
---
--- Truncar tablas antes de insertar `usuario_clan`
---
-
-TRUNCATE TABLE `usuario_clan`;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
