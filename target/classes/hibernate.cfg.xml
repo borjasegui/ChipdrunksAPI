@@ -10,8 +10,8 @@
 		<property name="hbm2ddl.auto">update</property>
 		<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
 		<property name="connection.url">jdbc:mysql://localhost/chipdrunks</property>
-		<property name="connection.username">root</property>
-		<property name="connection.password">root</property>
+		<property name="connection.username">chipiroot</property>
+		<property name="connection.password">chipiroot</property>
 		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
 		
 		<!-- mapping resource="employee.hbm.xml" / -->
