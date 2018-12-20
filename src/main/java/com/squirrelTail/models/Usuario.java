@@ -88,6 +88,15 @@ public class Usuario {
 	public void setNbares(int nbares) {
 		this.nbares = nbares;
 	}
+	
+	public boolean validate() {
+		boolean isValid=true;
+		
+		if(this.nombre==null || this.nombre.equals("")) isValid=false;
+		if(this.codigopostal<=0) isValid=false;
+		
+		return isValid;
+	}
 
 	
 }

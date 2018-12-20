@@ -1,5 +1,7 @@
 package com.squirrelTail.persistencia;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -23,16 +25,17 @@ public class UsuarioManager {
 		sf = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
 	}
 
-	public int createUsuario(Usuario newE) throws Exception {
+	public Usuario createUsuario(Usuario newE) throws Exception {
 		Session session = sf.openSession();
 		Transaction t = session.beginTransaction();
 
-		int id = ((Integer) session.save(newE)).intValue();
-
+		int nid = ((Integer) session.save(newE)).intValue();
+		newE.setNid(nid);
+		
 		t.commit();
 		session.close();
 
-		return id;
+		return newE;
 	}
 
 	public Usuario getUsuario(int id) throws Exception {
@@ -43,6 +46,16 @@ public class UsuarioManager {
 		session.close();
 
 		return recE;
+	}
+
+	public List<Usuario> getUsuarios() {
+		Session sess = sf.openSession();
+
+		List<Usuario> listaUsuarios = sess.createQuery("from Usuario").list();
+
+		sess.close();
+		
+		return listaUsuarios;
 	}
 
 }
