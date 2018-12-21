@@ -3,6 +3,7 @@ package com.squirrelTail.services;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -72,5 +73,32 @@ public class UsuariosService {
 			return Response.status(500).entity(new StatusMessage(500, "error")).build();
 		}
 	}
+	
+	@Path("/{nid}")
+	@PUT
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response actualizarUsuario(@PathParam("nid") int nid, Usuario unUsuario) {
+		Response resp = null;
+
+		unUsuario.setNid(nid);
+		if (unUsuario.validate()) {
+			UsuarioManager um;
+			try {
+				um = UsuarioManager.getInstance();
+
+				resp = Response.status(200).entity(um.updateUsuario(unUsuario)).build();
+			} catch (Exception e) {
+				e.printStackTrace();
+
+				resp = Response.status(500).entity(new StatusMessage(500, "error")).build();
+			}
+		} else {
+			resp = Response.status(400).entity(new StatusMessage(400, "Usuario incompleto")).build();
+		}
+
+		return resp;
+	}
+
 
 }
