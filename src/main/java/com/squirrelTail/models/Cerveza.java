@@ -16,7 +16,7 @@ public class Cerveza {
 	@Column(name="nombre")
 	private String nombre;
 	@Column(name="porcentaje_alcohol")
-	private double alcohol;
+	private double porcentaje_alcohol;
 	@Column(name="descripcion")
 	private String descripcion;
 	
@@ -24,11 +24,11 @@ public class Cerveza {
 		
 	}
 
-	public Cerveza(int zid, String nombre, double alcohol, String descripcion) {
+	public Cerveza(int zid, String nombre, double porcentaje_alcohol, String descripcion) {
 		super();
 		this.zid = zid;
 		this.nombre = nombre;
-		this.alcohol = alcohol;
+		this.porcentaje_alcohol = porcentaje_alcohol;
 		this.descripcion = descripcion;
 	}
 
@@ -49,11 +49,11 @@ public class Cerveza {
 	}
 
 	public double getAlcohol() {
-		return alcohol;
+		return porcentaje_alcohol;
 	}
 
 	public void setAlcohol(double alcohol) {
-		this.alcohol = alcohol;
+		this.porcentaje_alcohol = alcohol;
 	}
 
 	public String getDescripcion() {
@@ -62,6 +62,15 @@ public class Cerveza {
 
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
+	}
+	
+	public boolean validate() {
+		boolean isValid=true;
+		
+		if(this.nombre==null || this.nombre.equals("")) isValid=false;
+		if(this.porcentaje_alcohol<=0) isValid=false;
+		
+		return isValid;
 	}
 	
 }

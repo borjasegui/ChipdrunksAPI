@@ -25,17 +25,16 @@ public class BarManager {
 		sf = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
 	}
 
-	public List<Bar> dameTodosLosBares() throws Exception {
-		List<Bar> bar = null;
+	public List<Bar> getBares() {
+		Session sess = sf.openSession();
 
-		Session session = sf.openSession();
+		List<Bar> listaBares = sess.createQuery("from Bar").list();
 
-		bar = (session).createQuery("FROM Bar").list();
-
-		session.close();
-		return bar;
+		sess.close();
+		
+		return listaBares;
 	}
-
+	
 	public Bar getBar(int bid) throws Exception {
 		Session session = sf.openSession();
 
@@ -45,10 +44,4 @@ public class BarManager {
 
 		return recB;
 	}
-
-	public Bar getBarByBid(int bidInt) {
-		////// crear metodoooo x dios
-		return null;
-	}
-
 }

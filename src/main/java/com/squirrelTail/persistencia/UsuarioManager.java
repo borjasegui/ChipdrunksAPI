@@ -25,6 +25,16 @@ public class UsuarioManager {
 		sf = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
 	}
 
+	public List<Usuario> getUsuarios() {
+		Session sess = sf.openSession();
+
+		List<Usuario> listaUsuarios = sess.createQuery("from Usuario").list();
+
+		sess.close();
+		
+		return listaUsuarios;
+	}
+	
 	public Usuario createUsuario(Usuario newE) throws Exception {
 		Session session = sf.openSession();
 		Transaction t = session.beginTransaction();
@@ -38,24 +48,13 @@ public class UsuarioManager {
 		return newE;
 	}
 
-	public Usuario getUsuario(int id) throws Exception {
+	public Usuario getUsuario(int nid) throws Exception {
 		Session session = sf.openSession();
 
-		Usuario recE = session.get(Usuario.class, id);
+		Usuario recE = session.get(Usuario.class, nid);
 
 		session.close();
 
 		return recE;
 	}
-
-	public List<Usuario> getUsuarios() {
-		Session sess = sf.openSession();
-
-		List<Usuario> listaUsuarios = sess.createQuery("from Usuario").list();
-
-		sess.close();
-		
-		return listaUsuarios;
-	}
-
 }

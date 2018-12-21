@@ -1,0 +1,13 @@
+com\squirrelTail\persistencia\ClanManager.class
+com\squirrelTail\models\Usuario.class
+com\squirrelTail\services\ClanesService.class
+com\squirrelTail\persistencia\CervezaManager.class
+com\squirrelTail\services\BaresService.class
+com\squirrelTail\persistencia\BarManager.class
+com\squirrelTail\services\CervezasService.class
+com\squirrelTail\models\Bar.class
+com\squirrelTail\persistencia\UsuarioManager.class
+com\squirrelTail\services\UsuariosService.class
+com\squirrelTail\models\StatusMessage.class
+com\squirrelTail\models\Cerveza.class
+com\squirrelTail\models\Clan.class

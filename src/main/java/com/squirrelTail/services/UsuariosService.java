@@ -35,7 +35,7 @@ public class UsuariosService {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response addPedido(Usuario usuarioNuevo) {
+	public Response addUsuario(Usuario usuarioNuevo) {
 		Response resp = null;
 
 		if (usuarioNuevo.validate()) {

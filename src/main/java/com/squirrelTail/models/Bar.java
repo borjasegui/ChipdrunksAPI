@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -12,48 +13,39 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+
 @Entity
-@Table(name="bar")
+@Table(name = "bar")
 public class Bar {
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int bid;
-	@Column(name="nombre")
+	@Column(name = "nombre")
 	private String nombre;
-	
-	@Column(name="direccion")
+
+	@Column(name = "direccion")
 	private String direccion;
-	
-	@Column(name="telefono")
+
+	@Column(name = "telefono")
 	private int telefono;
-	
-	@Column(name="latitud")
+
+	@Column(name = "latitud")
 	private double latitud;
-	
-	@Column(name="longitud")
+
+	@Column(name = "longitud")
 	private double longitud;
-	
-	@Column(name="descripcion")
+
+	@Column(name = "descripcion")
 	private String descripcion;
-	
-	
-	@ManyToMany(cascade = { CascadeType.ALL })
-    @JoinTable(
-        name = "bar_cerveza", 
-        joinColumns = { @JoinColumn(name = "bar_id") }, 
-        inverseJoinColumns = { @JoinColumn(name = "cerveza_id") }
-    )
+
+	@ManyToMany(cascade = { CascadeType.ALL }, fetch=FetchType.EAGER)
+	@JoinTable(name = "bar_cerveza", joinColumns = { @JoinColumn(name = "bar_id") }, inverseJoinColumns = {
+			@JoinColumn(name = "cerveza_id") })
+
 	private List<Cerveza> cervezas;
-	
+
 	public Bar() {
-		
 	}
-
-
-
-	
-
-
 
 	public Bar(int bid, String nombre, String direccion, int telefono, double latitud, double longitud,
 			String descripcion, List<Cerveza> cervezas) {
@@ -65,10 +57,8 @@ public class Bar {
 		this.latitud = latitud;
 		this.longitud = longitud;
 		this.descripcion = descripcion;
-		
+
 	}
-
-
 
 	public int getBid() {
 		return bid;
@@ -134,6 +124,15 @@ public class Bar {
 		this.descripcion = descripcion;
 	}
 
+	public boolean validate() {
+		boolean isValid = true;
 
-	
+		if (this.nombre == null || this.nombre.equals(""))
+			isValid = false;
+		if (this.telefono <= 0)
+			isValid = false;
+
+		return isValid;
+	}
+
 }
