@@ -36,7 +36,8 @@ CREATE TABLE `bar` (
   `telefono` int(11) NOT NULL,
   `latitud` double NOT NULL,
   `longitud` double NOT NULL,
-  `descripcion` varchar(500) NOT NULL
+  `descripcion` varchar(500) NOT NULL,
+  `imagen` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------

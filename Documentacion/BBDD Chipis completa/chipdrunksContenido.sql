@@ -26,12 +26,12 @@ USE `chipdrunks`;
 -- Volcado de datos para la tabla `bar`
 --
 
-INSERT INTO `bar` (`bid`, `nombre`, `direccion`, `telefono`, `latitud`, `longitud`, `descripcion`) VALUES
-(1, 'Bar el Alamo', 'Calle Madrid 2 ', 916564876, 40.4619445, -3.6741318, 'Chupitos Gratis de 00:00 a 00:30 los Martes'),
-(3, 'Bar el Fresxo', 'Calle del Mar 45', 915684752, 40.4634891, -3.6752189, 'Con el Fresco ven al Fresxo y tienes un 3x2 en Birra'),
-(4, 'Cerveceria Blanco y Azul', 'Calle Blanco Y Negro', 916582563, 40.4637448, -3.6764269, 'Si vienes de blanco y azul, únicamente, chupito gratis'),
-(5, 'Taberna la Cocodrila', 'Calle de los Cocodrilos Revoltosos 23 ', 916587455, 40.462959, -3.6780409, 'Todos los miercoles cerveza artesana nueva'),
-(6, 'Bar Pop Copas y tapas', 'Calle de la Tapa gratis 23', 916754787, 40.461812, -3.6767821, 'Ven 5 dias en tres semanas y te regalamos la tapa del mes con tu birra');
+INSERT INTO `bar` (`bid`, `nombre`, `direccion`, `telefono`, `latitud`, `longitud`, `descripcion`,`imagen`) VALUES
+(1, 'Bar el Alamo', 'Calle Madrid 2 ', 916564876, 40.4619445, -3.6741318, 'Chupitos Gratis de 00:00 a 00:30 los Martes','/img/barejemplo.png'),
+(3, 'Bar el Fresxo', 'Calle del Mar 45', 915684752, 40.4634891, -3.6752189, 'Con el Fresco ven al Fresxo y tienes un 3x2 en Birra','/img/barejemplo.png'),
+(4, 'Cerveceria Blanco y Azul', 'Calle Blanco Y Negro', 916582563, 40.4637448, -3.6764269, 'Si vienes de blanco y azul, únicamente, chupito gratis','/img/barejemplo.png'),
+(5, 'Taberna la Cocodrila', 'Calle de los Cocodrilos Revoltosos 23 ', 916587455, 40.462959, -3.6780409, 'Todos los miercoles cerveza artesana nueva','/img/barejemplo.png'),
+(6, 'Bar Pop Copas y tapas', 'Calle de la Tapa gratis 23', 916754787, 40.461812, -3.6767821, 'Ven 5 dias en tres semanas y te regalamos la tapa del mes con tu birra','/img/barejemplo.png');
 
 --
 -- Volcado de datos para la tabla `cerveza`
